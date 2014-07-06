@@ -24,7 +24,8 @@ while (TRUE) {
   
   
   ## Every 3 hours, process the tweets
-  if (format(Sys.time(), "%M") %in% c('0','3','6','9','12','15','18','21')) {
+  GET_DATA_HOURS = c('0','3','6','9','12','15','18','21')
+  if (format(Sys.time(), "%M") %in% GET_DATA_HOURS) {
     ## find the last id to use
     SQL = "SELECT MAX(id) as id FROM emtweets"
     sinceID = dbGetQuery(ch, SQL, stringsAsFactors=F)
@@ -36,20 +37,22 @@ while (TRUE) {
     s = searchTwitter(Q, n=1500, lang="en", sinceID = sinceID)
     tweets = twListToDF(s)
     
-    ## process the tweets with various algorithms to test if RT, post, etc. here
-    ## ...
-    ## ...
-    
     ## write the data to the database
     dbWriteTable(ch, "emtweets", tweets, append=TRUE, row.names=F)
     dbDisconnect(ch)
 
   } #endif for grabbing data
   
-  ## get the data from NYT
+  ## scrape data from news outlets a couple times per day
   
-  ## 
-}
+  ## flag any tweets that should be retweeted
+  
+  ## flag accounts to follow  
+  
+  ## automate a post to autosummarize key stories for the day/week
+  
+  
+} # endwhile
 
 
 
