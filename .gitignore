@@ -1,0 +1,8 @@
+creds.R
+.Rhistory
+*.rds
+*.rdata
+*.csv
+*.txt
+*.db
+*.ipynb
