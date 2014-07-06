@@ -1,4 +1,4 @@
-# A Simple Twitter Bot
+# A Simple Twitter Bot for Enrollment Management
 @brocktibert 
 
 
