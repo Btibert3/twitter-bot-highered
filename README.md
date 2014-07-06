@@ -24,3 +24,11 @@ The bot, for example, could do the following:
 1.  `twitteR` package  
 2.  ...
 
+
+## Notes  
+
+-  Keep this as modules, so we can add functionality as we go  
+-  NYT API or Chronicle/Inside Higher Ed news crawling  
+-  Post summarized top stories to a wordpress site and tweet out the link  
+
+
